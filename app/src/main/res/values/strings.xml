@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Mi Agenda</string>
+    <string name="Nombre">Nombre</string>
+    <string name="ApellidoP">Apellido Paterno</string>
+    <string name="ApellidoM">Apellido Materno</string>
+    <string name="Nocuenta">Número de cuenta</string>
+    <string name="Masculino">Masculino</string>
+    <string name="Femenino">Femenino</string>
+
+    <string name="NombreFalta">"Ingresa un nombre"</string>
+    <string name="ApellidoPFalta">"Ingresa un apellido paterno"</string>
+    <string name="ApellidoMFalta">"Ingresa un apellido materno"</string>
+    <string name="NumFalta">"Ingresa un número de cuenta"</string>
+    <string name="DigitosMal">"EL número de cuenta debe ser de 10 dígitos"</string>
+    <string name="GeneroMal">"Ingresa el género"</string>
 </resources>
+
+
