@@ -12,6 +12,7 @@ public class Alumno implements Serializable {
         this.materno = materno;
         this.numcuenta = numcuenta;
         this.genero = genero;
+
     }
 
     @Override
