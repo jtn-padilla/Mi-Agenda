@@ -8,11 +8,22 @@
     tools:context=".MainActivity">
 
 
+    <Button
+        android:id="@+id/btnVerAgenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Agenda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnadir"
+        app:layout_constraintVertical_bias="0.183" />
+
     <CheckBox
         android:id="@+id/cbFemenino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Femenino"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.361"
@@ -23,7 +34,7 @@
         android:id="@+id/etNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/Nombre"
         android:inputType="textPersonName"
@@ -38,7 +49,7 @@
         android:id="@+id/etApellidoP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/ApellidoP"
         android:inputType="textPersonName"
@@ -53,7 +64,7 @@
         android:id="@+id/etApellidoM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/ApellidoM"
         android:inputType="textPersonName"
@@ -68,7 +79,7 @@
         android:id="@+id/etNumCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/Nocuenta"
         android:inputType="phone"
@@ -90,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbFemenino"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <CheckBox
         android:id="@+id/cbMasculino"
@@ -98,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginLeft="76dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Masculino"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGenero" />
@@ -119,7 +130,7 @@
         android:id="@+id/tvGenero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="Género"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

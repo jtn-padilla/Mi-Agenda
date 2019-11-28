@@ -2,28 +2,39 @@ package com.example.miagenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    Button anadir;
+    Button anadir, verAgenda;
     CheckBox cbFem,cbMasc;
+    ArrayList<Alumno> alumnos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        controlaGenero();
 
+        controlaGenero();
 
         // Registro, se validan campos
         anadir = (Button) findViewById(R.id.btnAnadir);
@@ -35,15 +46,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        verAgenda = (Button) findViewById(R.id.btnVerAgenda);
+        verAgenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LlamarActivity2();
+            }
+        });
     }
+
 
     public void validaCampos(View view){
         String nombre = ((EditText)findViewById(R.id.etNombre)).getText().toString();
         String paterno = ((EditText)findViewById(R.id.etApellidoP)).getText().toString();
         String materno = ((EditText)findViewById(R.id.etApellidoM)).getText().toString();
         String numcuenta = ((EditText)findViewById(R.id.etNumCuenta)).getText().toString();
-        int genero = validaGenero(); //true=hombre false=mujer
+        int genero = validaGenero(); //1=hombre 0=mujer
 
         if(!nombre.isEmpty()){
             if(!paterno.isEmpty()){
@@ -51,9 +69,10 @@ public class MainActivity extends AppCompatActivity {
                     if(!numcuenta.isEmpty()){
                         if(numcuenta.length() == 10){
                             if(genero != -1){
-                                Toast.makeText(this, String.valueOf(genero), Toast.LENGTH_SHORT).show();
                                 Alumno nuevo = new Alumno(nombre,paterno,materno,numcuenta,genero);
-                                LlamarActivity2(view,nuevo);
+                                //perstAlumno(nuevo);
+                                alumnos.add(nuevo);
+                                Toast.makeText(this, nombre + MainActivity.this.getString(R.string.Anadido) , Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 Toast.makeText(this, MainActivity.this.getString(R.string.GeneroMal), Toast.LENGTH_SHORT).show();
@@ -80,12 +99,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void LlamarActivity2(View view, Alumno nuevo) {
+    public void LlamarActivity2() {
         // Intent a actividad Lista
         Intent int2 = new Intent(getApplicationContext(), Lista.class);
-        int2.putExtra("alumno",nuevo);
+        int2.putExtra("alumno",alumnos);
         startActivity(int2);
     }
+
 
     public int validaGenero(){
         if(((CheckBox) findViewById(R.id.cbMasculino)).isChecked())
@@ -134,8 +154,8 @@ public class MainActivity extends AppCompatActivity {
         etNumCuenta.setText("");
         cbMasc.setChecked(false);
         cbFem.setChecked(false);
-
     }
+
 
 }
 

@@ -13,6 +13,7 @@
     <string name="NumFalta">"Ingresa un número de cuenta"</string>
     <string name="DigitosMal">"EL número de cuenta debe ser de 10 dígitos"</string>
     <string name="GeneroMal">"Ingresa el género"</string>
+    <string name="Anadido">" añadido"</string>
 </resources>
 
 
