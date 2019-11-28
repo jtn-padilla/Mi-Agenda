@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -17,7 +18,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,11 +33,20 @@ public class MainActivity extends AppCompatActivity {
     Button anadir, verAgenda;
     CheckBox cbFem,cbMasc;
     ArrayList<Alumno> alumnos = new ArrayList<>();
+    SharedPreferences sp;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // No se logro persistencia :(
+        /*sp = getPreferences(Context.MODE_PRIVATE);
+        editor = sp.edit();
+        Gson gson = new Gson();
+        String json = sp.getString("lista", "");
+        Type founderListType = new TypeToken<ArrayList<Alumno>>(){}.getType();
+        ArrayList<Alumno> alumnos = gson.fromJson(json, founderListType);*/
 
         controlaGenero();
 
@@ -73,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
                                 //perstAlumno(nuevo);
                                 alumnos.add(nuevo);
                                 Toast.makeText(this, nombre + MainActivity.this.getString(R.string.Anadido) , Toast.LENGTH_SHORT).show();
+                                // No se logro persistencia :(
+                                /*Gson gson = new Gson();
+                                String json = gson.toJson(alumnos);
+                                editor.putString("lista", json);
+                                editor.commit();*/
                             }
                             else{
                                 Toast.makeText(this, MainActivity.this.getString(R.string.GeneroMal), Toast.LENGTH_SHORT).show();
@@ -155,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
         cbMasc.setChecked(false);
         cbFem.setChecked(false);
     }
-
 
 }
 

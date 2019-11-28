@@ -17,7 +17,7 @@ public class Alumno implements Serializable {
 
     @Override
     public String toString() {
-        return getNombre()+" "+getPaterno()+" "+getMaterno() +" "+getGenero();
+        return getNombre()+" "+getPaterno()+" "+getMaterno();
     }
 
     public int getGenero() {

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My agenda</string>
+    <string name="Nombre">Name</string>
+    <string name="ApellidoP">Last Name</string>
+    <string name="ApellidoM">Second Last Name</string>
+    <string name="Nocuenta">ID number</string>
+    <string name="Masculino">Male</string>
+    <string name="Femenino">Female</string>
+
+    <string name="NombreFalta">"Enter a name"</string>
+    <string name="ApellidoPFalta">"Enter a last name"</string>
+    <string name="ApellidoMFalta">"Enter a second last name"</string>
+    <string name="NumFalta">"Enter an ID number"</string>
+    <string name="DigitosMal">"The ID must be a 10 digit number"</string>
+    <string name="GeneroMal">"Select a gender"</string>
+    <string name="Anadido">" added"</string>
+    <string name="VerAgenda">"See agenda"</string>
+    <string name="Anadir">"Add"</string>
+    <string name="AgendaAlumnos">"Students agenda"</string>
+    <string name="Genero">"Gender"</string>
+
+
+</resources>

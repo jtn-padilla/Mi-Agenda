@@ -3,7 +3,9 @@ package com.example.miagenda;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.prefs.PreferenceChangeEvent;
 
 public class Lista extends AppCompatActivity {
 
@@ -32,7 +35,6 @@ public class Lista extends AppCompatActivity {
 
         //ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, alumnos);
         arrayAdapter = new Adaptador(this, GetArrayItems(alumnos));
-
         lvLista.setAdapter(arrayAdapter);
 
         // Que pasa cuando se le da click al item del ListView
@@ -47,15 +49,17 @@ public class Lista extends AppCompatActivity {
 
     private ArrayList<Entidad> GetArrayItems(ArrayList<Alumno> lista){
         ArrayList<Entidad> listItems = new ArrayList<>();
-        int genero;
         for (Alumno al: lista){
-            if(al.getGenero() == 1) {
+            if(al.getGenero() == 1)
                 listItems.add(new Entidad(R.drawable.hombre, al.toString()));
-            }
-            else{
+            else
                 listItems.add(new Entidad(R.drawable.mujer,al.toString()));
-            }
         }
         return listItems;
     }
+
+
+
+
+
 }
